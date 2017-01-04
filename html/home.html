@@ -1,0 +1,51 @@
+<ons-page id="homePage">
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button component="button/menu">
+                <ons-icon icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">Mirror Life</div>
+        <div class="right"></div>
+    </ons-toolbar>
+
+    <ons-speed-dial position="bottom right" direction="up">
+        <ons-fab>
+            <ons-icon icon="md-star"></ons-icon>
+        </ons-fab>
+        <ons-speed-dial-item>
+            <ons-icon id="btn-increase-point" icon="md-plus"></ons-icon>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+            <ons-icon id="btn-decrease-point" icon="md-minus"></ons-icon>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+            <ons-icon id="btn-increase-multiplier" icon="md-volume-up"></ons-icon>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+            <ons-icon id="btn-decrease-multiplier" icon="md-volume-down"></ons-icon>
+        </ons-speed-dial-item>
+    </ons-speed-dial>
+
+    <div align="center" style="padding: 80px 0px 0px 0px">
+        <small>-Level-</small>
+        <div id="field-level" style="font-size: 4em">23</div>
+        <div style="padding: 25px"></div>
+        <hr>
+        <ons-progress-circular id="field-exp" value="23" style="width:100px; height:100px"></ons-progress-circular>
+    </div>
+
+    <div align="center">
+        <ons-row>
+            <ons-col width="50%">
+                <ons-icon id="field-icon-achievement" icon="ion-university" size="70px"></ons-icon><br>
+                <ons-icon id="field-icon-stamina" icon="ion-battery-empty" size="70px"></ons-icon><br>
+                <ons-icon id="field-icon-multiplier" icon="ion-volume-low" size="70px"></ons-icon>
+            </ons-col>
+            <ons-col width="50%">
+                <p>Total Points:</p><br><b id="field-total-point">5</b><br>
+                <p>Today's Total:</p><br><b id="field-total-today">3</b>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-page>

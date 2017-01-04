@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Mirror Life</title>
-
     <script src="node_modules/onsenui/js/onsenui.js"></script>
-
-
+    <script src="js/app.js"></script>
     <link rel="stylesheet" href="node_modules/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="node_modules/onsenui/css/onsen-css-components.css">
-
 </head>
 
 <body>
-
+    <ons-navigator id="myNavigator" page="splitter.html"></ons-navigator>
+    <ons-template id="splitter.html">
+        <ons-splitter id="mySplitter">
+            <ons-splitter-side page="html/menu.html" swipeable width="250px" collapse swipe-target-width="50px">
+            </ons-splitter-side>
+            <ons-splitter-content page="html/home.html">
+            </ons-splitter-content>
+        </ons-splitter>
+    </ons-template>
 </body>
-
 </html>
