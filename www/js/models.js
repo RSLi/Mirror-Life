@@ -7,6 +7,11 @@ myApp.models = {
         s.setItem('multiplier',1);
     },
 
+    set: function(key, value) {
+        var s = window.localStorage;
+        s.setItem(key, value);
+    },
+
     user: {
         getPoint: function() {
             var s = window.localStorage;

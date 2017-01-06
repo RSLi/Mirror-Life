@@ -1,15 +1,15 @@
 myApp.controllers = {
     menuPage: function(page) {
         function bindPage(buttonId, target) {
-            page.querySelector(buttonId).onclick = function() {
+            document.getElementById(buttonId).onclick = function() {
                 var content = document.getElementById('content');
                 var menu = document.getElementById('menu');
                 content.load(target).then(menu.close.bind(menu));
             };
         }
 
-        bindPage('#menu-home', 'html/home.html');
-        bindPage('#menu-settings', 'html/settings.html');
+        bindPage('menu-home', 'html/home.html');
+        bindPage('menu-settings', 'html/settings.html');
     },
 
     homePage: function(page) {
@@ -57,7 +57,22 @@ myApp.controllers = {
             document.querySelector('#mySplitter').left.toggle();
         };
 
-        
+        function bindPromptToData(promptBtnId, storageKey) {
+            document.getElementById(promptBtnId).onclick = function() {
+                ons.notification.prompt({message: 'New Value'})
+                .then(function(value) {
+                    if (isNaN(parseInt(value))) {
+                        ons.notification.alert('The value must be an integer');
+                    } else {
+                        myApp.models.set(storageKey, parseInt(value));
+                    }
+                    myApp.views.settingsPage.render(page);
+                });
+            };
+        }
+
+        bindPromptToData('btn-prompt-point', 'point');
+        myApp.views.settingsPage.render(page);
     }
 
 };

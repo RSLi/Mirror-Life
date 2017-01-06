@@ -44,5 +44,12 @@ myApp.views = {
                 iconMultiplier.setAttribute("icon", "ion-volume-high");
             }
         }
+    },
+
+    settingsPage: {
+        render: function(page) {
+            var point = myApp.models.user.getPoint();
+            document.querySelector('#btn-prompt-point .right').innerHTML = point;
+        }
     }
 }
