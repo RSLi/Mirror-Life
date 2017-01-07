@@ -5,11 +5,17 @@ myApp.models = {
         s.setItem('today_point',0);
         s.setItem('last_login', new Date().getDate());
         s.setItem('multiplier',1);
+        s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
     },
 
     set: function(key, value) {
         var s = window.localStorage;
         s.setItem(key, value);
+    },
+
+    get: function(key) {
+        var s = window.localStorage;
+        return s.getItem(key);
     },
 
     user: {
@@ -49,5 +55,27 @@ myApp.models = {
             s.setItem('today_point', 0);
             s.setItem('last_login', new Date().getDate());
         }
+    },
+
+    timeChallenge: {
+        isOn: function() {
+            return JSON.parse(myApp.models.get('time_challenge')).on;
+        },
+
+        off: function() {
+            myApp.models.set('time_challenge', JSON.stringify({on:false}));
+        },
+
+        on: function(endTime, reward_point, task) {
+            myApp.models.set('time_challenge', JSON.stringify(
+                {
+                    "on": true,
+                    "reward_point": reward_point,
+                    "task": task
+                }
+            ));
+        }
+
     }
+
 }

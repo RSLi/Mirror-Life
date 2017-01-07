@@ -13,7 +13,12 @@ ons.ready(function() {
         myApp.models.initializeStorage();
     }
 
+    if (!window.localStorage.getItem('time_challenge')) {
+        myApp.models.timeChallenge.off(); //TODO: initialize time_challenge update in test, need to be deleted when released
+    }
+
     if (window.localStorage.getItem('last_login') != new Date().getDate()) {
         myApp.models.user.dailyReset();
     }
+
 });

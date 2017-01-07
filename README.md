@@ -14,3 +14,7 @@
     - User can set up a goal and its point rewards, and allocate a specific amount of time to complete this goal
     - A checkpoint will be created according to the allocated time, and a timer will show on the interface
     - If the user achieved the goal and checked off the checkpoint before the timer runs out, the point rewards will be given.
+
+### Dependence
+- Onsen UI 2
+- Moment.js

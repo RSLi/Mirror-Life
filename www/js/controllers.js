@@ -57,7 +57,8 @@ myApp.controllers = {
         page.querySelector('#btn-splitter-toggle').onclick = function() {
             document.querySelector('#mySplitter').left.toggle();
         };
-        
+
+        myApp.views.timeChallengePage.render(page);
     },
 
     settingsPage: function(page) {

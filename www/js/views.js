@@ -46,6 +46,28 @@ myApp.views = {
         }
     },
 
+    timeChallengePage: {
+        render: function(page) {
+            if (myApp.models.timeChallenge.isOn()) {
+                myApp.views.timeChallengePage.renderChallengeOn(page);
+            } else {
+                myApp.views.timeChallengePage.renderChallengeOff(page);
+            }
+        },
+
+        renderChallengeOff: function(page) {
+            document.getElementById('challenge-off').style.display = 'block';
+            document.getElementById('challenge-on').style.display = 'none';
+        },
+
+        renderChallengeOn: function(page) {
+            document.getElementById('challenge-off').style.display = 'none';
+            document.getElementById('challenge-on').style.display = 'block';
+
+
+        }
+    },
+
     settingsPage: {
         render: function(page) {
             var point = myApp.models.user.getPoint();
