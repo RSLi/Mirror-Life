@@ -9,6 +9,7 @@ myApp.controllers = {
         }
 
         bindPage('menu-home', 'html/home.html');
+        bindPage('menu-time-challenge', 'html/time_challenge.html');
         bindPage('menu-settings', 'html/settings.html');
     },
 
@@ -50,6 +51,13 @@ myApp.controllers = {
         };
 
         myApp.views.homePage.render(page);
+    },
+
+    timeChallengePage: function(page) {
+        page.querySelector('#btn-splitter-toggle').onclick = function() {
+            document.querySelector('#mySplitter').left.toggle();
+        };
+        
     },
 
     settingsPage: function(page) {
