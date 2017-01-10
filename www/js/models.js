@@ -58,8 +58,12 @@ myApp.models = {
     },
 
     timeChallenge: {
+        getData: function() {
+            return JSON.parse(myApp.models.get('time_challenge'));
+        },
+
         isOn: function() {
-            return JSON.parse(myApp.models.get('time_challenge')).on;
+            return myApp.models.timeChallenge.getData().on;
         },
 
         off: function() {

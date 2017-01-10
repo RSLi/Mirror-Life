@@ -58,6 +58,24 @@ myApp.controllers = {
             document.querySelector('#mySplitter').left.toggle();
         };
 
+        page.querySelector('#btn-challenge-start').onclick = function() {
+            //TODO add start logic
+            myApp.views.timeChallengePage.render(page);
+        };
+
+        page.querySelector('#btn-challenge-complete').onclick = function() {
+            var challenge_data = myApp.models.get('time_challenge');
+            var reward = challenge_data.reward_point;
+            myApp.models.user.increasePoint(reward);
+            myApp.models.timeChallenge.off();
+            myApp.views.timeChallengePage.render(page);
+        };
+
+        page.querySelector('#btn-challenge-abandon').onclick = function() {
+            myApp.models.timeChallenge.off();
+            myApp.views.timeChallengePage.render(page);
+        };
+
         myApp.views.timeChallengePage.render(page);
     },
 
