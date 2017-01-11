@@ -71,9 +71,11 @@ myApp.models = {
         },
 
         on: function(endTime, reward_point, task) {
+            //endTime is MomentJS
             myApp.models.set('time_challenge', JSON.stringify(
                 {
                     "on": true,
+                    "end_time": endTime,
                     "reward_point": reward_point,
                     "task": task
                 }

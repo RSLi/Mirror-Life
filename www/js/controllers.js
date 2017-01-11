@@ -59,7 +59,12 @@ myApp.controllers = {
         };
 
         page.querySelector('#btn-challenge-start').onclick = function() {
-            //TODO add start logic
+            //TODO Add validation logic
+            var taskName = page.querySelector('#input-text-taskname').value;
+            var duration = page.querySelector('#input-text-duration').value;
+            var reward = page.querySelector('#input-text-reward').value;
+            var endTime = moment().add(parseInt(duration), 'm');
+            myApp.models.timeChallenge.on(endTime, parseInt(reward), taskName);
             myApp.views.timeChallengePage.render(page);
         };
 
