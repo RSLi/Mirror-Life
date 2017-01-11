@@ -66,7 +66,8 @@ myApp.views = {
             var challenge_data = myApp.models.timeChallenge.getData();
             document.getElementById('field-time-challenge-taskname').innerHTML = challenge_data.task;
             document.getElementById('field-time-challenge-reward').innerHTML = parseInt(challenge_data.reward_point);
-            document.getElementById('field-time-challenge-endtime').innerHTML = challenge_data.end_time;
+            document.getElementById('field-time-challenge-endtime').innerHTML = moment(challenge_data.end_time).format('HH:mm');
+            document.getElementById('field-time-challenge-fromnow').innerHTML = moment(challenge_data.end_time).fromNow();
         }
     },
 
