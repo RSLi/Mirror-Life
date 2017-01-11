@@ -10,18 +10,25 @@
     </ons-toolbar>
 
     <div id="challenge-off" style="display:none">
-        <div style="min-height: 70%">
-            <ons-input id="input-text-taskname" modifier="underbar" placeholder="Task Name" float></ons-input>
-            <ons-input id="input-text-duration" modifier="underbar" placeholder="Duration(Min)" float></ons-input>
-            <ons-input id="input-text-reward" modifier="underbar" placeholder="Reward Points" float></ons-input>
-
+        <div style="min-height: 460px; text-align: center; margin-top: 30px;" align="center">
+            <p><ons-input id="input-text-taskname" modifier="underbar" placeholder="Task Name" float></ons-input></p>
+            <p><ons-input id="input-text-duration" modifier="underbar" placeholder="Duration(Min)" float></ons-input></p>
+            <p><ons-input id="input-text-reward" modifier="underbar" placeholder="Reward Points" float></ons-input></p>
         </div>
         <ons-button id="btn-challenge-start" modifier="large">Start</ons-button>
     </div>
 
     <div id="challenge-on" style="display:none">
-        <div style="min-height: 70%">
-
+        <div style="min-height: 460px; text-align: center; margin-top: 30px;">
+            <p>
+                Task: <span id="field-time-challenge-taskname"></span>
+            </p>
+            <p>
+                End Time: <span id="field-time-challenge-endtime"></span>
+            </p>
+            <p>
+                Reward: <span id="field-time-challenge-reward"></span>
+            </p>
         </div>
         <ons-button id="btn-challenge-complete" modifier="large">Complete</ons-button>
         <ons-button id="btn-challenge-abandon" modifier="large--quiet">Abandon</ons-button>

@@ -69,8 +69,8 @@ myApp.controllers = {
         };
 
         page.querySelector('#btn-challenge-complete').onclick = function() {
-            var challenge_data = myApp.models.get('time_challenge');
-            var reward = challenge_data.reward_point;
+            var challenge_data = myApp.models.timeChallenge.getData();
+            var reward = parseInt(challenge_data.reward_point);
             myApp.models.user.increasePoint(reward);
             myApp.models.timeChallenge.off();
             myApp.views.timeChallengePage.render(page);

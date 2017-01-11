@@ -63,8 +63,10 @@ myApp.views = {
         renderChallengeOn: function(page) {
             document.getElementById('challenge-off').style.display = 'none';
             document.getElementById('challenge-on').style.display = 'block';
-
-
+            var challenge_data = myApp.models.timeChallenge.getData();
+            document.getElementById('field-time-challenge-taskname').innerHTML = challenge_data.task;
+            document.getElementById('field-time-challenge-reward').innerHTML = parseInt(challenge_data.reward_point);
+            document.getElementById('field-time-challenge-endtime').innerHTML = challenge_data.end_time;
         }
     },
 
