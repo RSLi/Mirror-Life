@@ -5,6 +5,7 @@
 - [x] Create Time Challenges: Check of Task on time to receive Rewards
 
 ### TODO
+- [ ] Add hook and pull in the TimeChallengeScreen to refresh time display
 - [ ] Level Privilege Screen
 - [ ] Todo list that can autofill the time challenge form
 - [ ] Customization of Background Images
