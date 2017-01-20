@@ -11,6 +11,7 @@ myApp.controllers = {
         bindPage('menu-home', 'html/home.html');
         bindPage('menu-time-challenge', 'html/time_challenge.html');
         bindPage('menu-settings', 'html/settings.html');
+        bindPage('menu-todo', 'html/todo.html');
     },
 
     homePage: function(page) {
@@ -105,6 +106,22 @@ myApp.controllers = {
 
         bindPromptToData('btn-prompt-point', 'point');
         myApp.views.settingsPage.render(page);
+    },
+
+    "todoPage": function(page) {
+        page.querySelector('#btn-splitter-toggle').onclick = function() {
+            document.querySelector('#app-splitter').left.toggle();
+        };
+
+        page.querySelector('#btn-create-todo').onclick = function() {
+            ons.notification.prompt({message: 'New Todo'})
+                .then(function(value) {
+                    myApp.models.todo.add(value);
+                    myApp.views.todoPage(page);
+                });
+        };
+
+        myApp.views.todoPage(page);
     }
 
 };
