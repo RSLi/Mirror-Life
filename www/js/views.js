@@ -79,7 +79,7 @@ myApp.views = {
     },
 
     todoPage: function(page) {
-        var list = myApp.models.data.todolist;// a list of todo objects
+        var list = myApp.models.todolist.getData();// a list of todo objects
         var listview = document.querySelector('#field-todo-list');
         listview.innerHTML = ""; // clear all leftover html before appending rendered todos
         var num = 0;
@@ -98,7 +98,7 @@ myApp.views = {
         for (i = 0; i < num; i++) {
             page.querySelectorAll('.endtask')[i].addEventListener('click', function(event) {
                 var id = event.currentTarget.id;
-                myApp.models.todo.end(id);
+                myApp.models.todolist.end(id);
                 myApp.views.todoPage(page);
             });
         }

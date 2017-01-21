@@ -116,7 +116,7 @@ myApp.controllers = {
         page.querySelector('#btn-create-todo').onclick = function() {
             ons.notification.prompt({message: 'New Todo'})
                 .then(function(value) {
-                    myApp.models.todo.add(value);
+                    myApp.models.todolist.add(value);
                     myApp.views.todoPage(page);
                 });
         };

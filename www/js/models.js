@@ -1,24 +1,25 @@
 myApp.models = {
-    initializeStorage: function() {
+    "initializeStorage": function() {
         var s = window.localStorage;
         s.setItem('point',0);
         s.setItem('today_point',0);
         s.setItem('last_login', new Date().getDate());
         s.setItem('multiplier',1);
         s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
+        s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}]}));
     },
 
-    set: function(key, value) {
+    "set": function(key, value) {
         var s = window.localStorage;
         s.setItem(key, value);
     },
 
-    get: function(key) {
+    "get": function(key) {
         var s = window.localStorage;
         return s.getItem(key);
     },
 
-    user: {
+    "user": {
         getPoint: function() {
             var s = window.localStorage;
             return s.getItem('point');
@@ -57,7 +58,7 @@ myApp.models = {
         }
     },
 
-    timeChallenge: {
+    "timeChallenge": {
         getData: function() {
             return JSON.parse(myApp.models.get('time_challenge'));
         },
@@ -80,6 +81,38 @@ myApp.models = {
                     "task": task
                 }
             ));
+        }
+
+    },
+
+    "todolist": {
+
+        getData: function() {
+            var list = JSON.parse(myApp.models.get('todolist')).todolist;
+            if (list == null) {
+                myApp.models.todolist.save([]);
+                list = JSON.parse(myApp.models.get('todolist')).todolist;
+            }
+            return list;
+        },
+
+        add: function(task) {
+            var list = myApp.models.todolist.getData();
+            if (!list) {
+                list = [{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}];
+            }
+            list.push({"task": task, "done": false});
+            myApp.models.todolist.save(list);
+        },
+
+        end: function(id) {
+            var list = myApp.models.todolist.getData();
+            list[id].done = true;
+            myApp.models.todolist.save(list);
+        },
+
+        save: function(list) {
+            myApp.models.set('todolist', JSON.stringify({'todolist': list}));
         }
 
     }
