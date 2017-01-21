@@ -108,9 +108,9 @@ myApp.controllers = {
         myApp.views.settingsPage.render(page);
     },
 
-    "todoPage": function(page) {
+    todoPage: function(page) {
         page.querySelector('#btn-splitter-toggle').onclick = function() {
-            document.querySelector('#app-splitter').left.toggle();
+            document.querySelector('#mySplitter').left.toggle();
         };
 
         page.querySelector('#btn-create-todo').onclick = function() {

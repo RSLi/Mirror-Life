@@ -78,7 +78,7 @@ myApp.views = {
         }
     },
 
-    "todoPage": function(page) {
+    todoPage: function(page) {
         var list = myApp.models.data.todolist;// a list of todo objects
         var listview = document.querySelector('#field-todo-list');
         listview.innerHTML = ""; // clear all leftover html before appending rendered todos
