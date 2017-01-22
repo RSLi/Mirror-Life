@@ -58,6 +58,11 @@ myApp.views = {
         renderChallengeOff: function(page) {
             document.getElementById('challenge-off').style.display = 'block';
             document.getElementById('challenge-on').style.display = 'none';
+            if (window.temp) {
+                if (window.temp.task) {
+                    page.querySelector('#input-text-taskname').value = window.temp.task;
+                }
+            }
         },
 
         renderChallengeOn: function(page) {
@@ -86,19 +91,37 @@ myApp.views = {
         //loop: create html items for each todo object in the array
         for (i = 0; i < list.length; i++) {
             listview.innerHTML = listview.innerHTML + '<ons-list-item tappable id="todo-item-' + i + '">' +
-              '<div class="left endtask" id="'+ i +'">' +
+              '<div class="right endtask" id="'+ i +'">' +
                 '<ons-icon icon="md-check"></ons-icon>' +
-              '</div>' + '<div class="center">' + list[i].task + '</div>'
+              '</div>' + '<div class="center start-time-challenge">' + list[i].task + '</div>'
             '</ons-list-item>';
-            num++;    
+            num++;
         }
 
         for (i = 0; i < num; i++) {
             page.querySelectorAll('.endtask')[i].addEventListener('click', function(event) {
+                //Get selected todo id
                 var id = event.currentTarget.id;
+                //Delete selected todo object from storage
                 myApp.models.todolist.end(id);
+                //rerender view
                 myApp.views.todoPage(page);
             });
+            page.querySelectorAll('.start-time-challenge')[i].addEventListener('click', (function(id) {
+                return function(event) {
+                //Jump to time challenge only when There's no on-going time challenge
+                if (!myApp.models.timeChallenge.isOn()) {
+                    //Get data from todo object
+                    var list = myApp.models.todolist.getData();
+                    var task = list[id].task;
+                    //Delete selected todo object from storage
+                    myApp.models.todolist.end(id);
+                    //Push data to time challenge page
+                    window.temp = {};
+                    window.temp.task = task;
+                    document.getElementById('content').load('html/time_challenge.html').then();
+                }
+            }})(i));
         }
 
     }

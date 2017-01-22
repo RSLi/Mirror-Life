@@ -101,7 +101,7 @@ myApp.models = {
             if (!list) {
                 list = [{"task": "Sample Task 1"}, {"task": "Sample Task 2"}];
             }
-            list.push({"task": task, "done": false});
+            list.push({"task": task});
             myApp.models.todolist.save(list);
         },
 
