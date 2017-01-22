@@ -6,7 +6,7 @@ myApp.models = {
         s.setItem('last_login', new Date().getDate());
         s.setItem('multiplier',1);
         s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
-        s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}]}));
+        s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1"}, {"task": "Sample Task 2"}]}));
     },
 
     "set": function(key, value) {
@@ -99,7 +99,7 @@ myApp.models = {
         add: function(task) {
             var list = myApp.models.todolist.getData();
             if (!list) {
-                list = [{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}];
+                list = [{"task": "Sample Task 1"}, {"task": "Sample Task 2"}];
             }
             list.push({"task": task, "done": false});
             myApp.models.todolist.save(list);
@@ -107,7 +107,7 @@ myApp.models = {
 
         end: function(id) {
             var list = myApp.models.todolist.getData();
-            list[id].done = true;
+            list.splice(id, 1);
             myApp.models.todolist.save(list);
         },
 

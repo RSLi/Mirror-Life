@@ -18,7 +18,7 @@ ons.ready(function() {
     }
 
     if (!window.localStorage.getItem('todolist')) {
-        window.localStorage.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}]}));; //TODO: initialize todolist update in test, need to be deleted when released
+        window.localStorage.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1"}, {"task": "Sample Task 2"}]}));; //TODO: initialize todolist update in test, need to be deleted when released
     }
 
     if (window.localStorage.getItem('last_login') != new Date().getDate()) {

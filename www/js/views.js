@@ -85,14 +85,12 @@ myApp.views = {
         var num = 0;
         //loop: create html items for each todo object in the array
         for (i = 0; i < list.length; i++) {
-            if (!list[i].done) {
-                listview.innerHTML = listview.innerHTML + '<ons-list-item tappable id="todo-item-' + i + '">' +
-                  '<div class="left endtask" id="'+ i +'">' +
-                    '<ons-icon icon="md-check"></ons-icon>' +
-                  '</div>' + '<div class="center">' + list[i].task + '</div>'
-                '</ons-list-item>';
-                num++;
-            }
+            listview.innerHTML = listview.innerHTML + '<ons-list-item tappable id="todo-item-' + i + '">' +
+              '<div class="left endtask" id="'+ i +'">' +
+                '<ons-icon icon="md-check"></ons-icon>' +
+              '</div>' + '<div class="center">' + list[i].task + '</div>'
+            '</ons-list-item>';
+            num++;    
         }
 
         for (i = 0; i < num; i++) {
