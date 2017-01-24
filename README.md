@@ -3,11 +3,11 @@
 ### A Minimalistic Self-evaluation tool for the Overachievers
 - [x] Rate your performance in life instantaneously, All in One Click!
 - [x] Create Time Challenges: Check of Task on time to receive Rewards
+- [x] Todo list that can autofill the time challenge form
 
 ### TODO
 - [ ] Add hook and pull in the TimeChallengeScreen to refresh time display
 - [ ] Level Privilege Screen
-- [ ] Todo list that can autofill the time challenge form
 - [ ] Customization of Background Images
 - [ ] Customization of Theme color
 
