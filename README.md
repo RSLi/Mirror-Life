@@ -10,6 +10,9 @@
 - [ ] Level Privilege Screen
 - [ ] Customization of Background Images
 - [ ] Customization of Theme color
+- [ ] Add Reward Store using Points
+- [ ] Home Screen Tap to Reveal UI
+- [ ] Splash Screen
 
 ### Dependence
 - Onsen UI 2
