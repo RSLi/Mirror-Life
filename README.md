@@ -6,7 +6,7 @@
 - [x] Todo list that can autofill the time challenge form
 
 ### TODO
-- [ ] Add hook and pull in the TimeChallengeScreen to refresh time display
+- [x] Add hook and pull in the TimeChallengeScreen to refresh time display
 - [ ] Level Privilege Screen
 - [ ] Customization of Background Images
 - [ ] Customization of Theme color
