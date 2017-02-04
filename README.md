@@ -7,6 +7,7 @@
 
 ### TODO
 - [x] Add hook and pull in the TimeChallengeScreen to refresh time display
+- [ ] Refactor model to enable module add-ons
 - [ ] Level Privilege Screen
 - [ ] Customization of Background Images
 - [ ] Customization of Theme color

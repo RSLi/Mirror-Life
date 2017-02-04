@@ -19,6 +19,14 @@ myApp.models = {
         return s.getItem(key);
     },
 
+    "setJSON": function(key, value) {
+        window.localStorage.setItem(key, JSON.stringify(value));
+    },
+
+    "getJSON": function(key, value) {
+        JSON.parse(window.localStorage.getItem(key));
+    },
+
     "user": {
         getPoint: function() {
             var s = window.localStorage;
