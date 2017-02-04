@@ -62,6 +62,7 @@ myApp.views = {
                 if (window.temp.task) {
                     page.querySelector('#input-text-taskname').value = window.temp.task;
                 }
+                window.temp = null;
             }
         },
 
