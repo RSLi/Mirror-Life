@@ -24,7 +24,7 @@ myApp.models = {
     },
 
     "getJSON": function(key, value) {
-        JSON.parse(window.localStorage.getItem(key));
+        return JSON.parse(window.localStorage.getItem(key));
     },
 
     "user": {

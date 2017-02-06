@@ -124,4 +124,17 @@ myApp.controllers = {
         myApp.views.todoPage(page);
     }
 
+    // petPage: function(page) {
+    //     //Starting from this module, use model.setJSON for model operations
+    //     if (!myApp.models.get('pet')) {
+    //         myApp.models.setJSON({
+    //             "name": "Love",
+    //             "food": 50,
+    //             "health": 50,
+    //             "action_point": 10
+    //         });
+    //     }
+    //     myApp.views.petPage(page);
+    // }
+
 };
