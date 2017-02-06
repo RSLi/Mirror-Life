@@ -106,6 +106,19 @@ myApp.controllers = {
 
         bindPromptToData('btn-prompt-point', 'point');
         bindPromptToData('btn-prompt-day', 'day');
+
+        page.querySelector('#btn-reset').onclick = function() {
+            ons.notification.confirm({message: 'Really Reset?'})
+            .then(function(value) {
+                if (value == 1) {
+                    myApp.models.set('point', 0);
+                    myApp.models.set('today_point', 0);
+                    myApp.models.set('day', 0);
+                }
+                myApp.views.settingsPage.render(page);
+            });
+        };
+
         myApp.views.settingsPage.render(page);
     },
 
