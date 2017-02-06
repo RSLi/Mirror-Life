@@ -2,11 +2,13 @@ myApp.views = {
     homePage: {
         render: function(page) {
             var point = myApp.models.user.getPoint();
+            var day = myApp.models.user.getDay();
             var today_point = myApp.models.user.getTodayPoint();
             var multiplier = myApp.models.user.getMultiplier();
             var hour = new Date().getHours();
 
             page.querySelector('#field-level').innerHTML = Math.floor(point / 10);
+            page.querySelector('#field-day').innerHTML = day;
             page.querySelector('#field-exp').value = point % 10 * 10;
             page.querySelector('#field-total-point').innerHTML = point;
             page.querySelector('#field-total-today').innerHTML = today_point;
@@ -110,7 +112,9 @@ myApp.views = {
     settingsPage: {
         render: function(page) {
             var point = myApp.models.user.getPoint();
+            var day = myApp.models.user.getDay();
             document.querySelector('#btn-prompt-point .right').innerHTML = point;
+            document.querySelector('#btn-prompt-day .right').innerHTML = day;
         }
     },
 

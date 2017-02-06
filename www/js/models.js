@@ -6,6 +6,7 @@ myApp.models = {
         s.setItem('last_login', new Date().getDate());
         s.setItem('multiplier',1);
         s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
+        s.setItem('day', 0);
         s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1"}, {"task": "Sample Task 2"}]}));
     },
 
@@ -59,9 +60,15 @@ myApp.models = {
             return s.getItem('today_point');
         },
 
+        getDay: function() {
+            var s = window.localStorage;
+            return s.getItem('day');
+        },
+
         dailyReset: function() {
             var s = window.localStorage;
             s.setItem('today_point', 0);
+            s.setItem('day', parseInt(s.getItem('day')) + 1);
             s.setItem('last_login', new Date().getDate());
         }
     },

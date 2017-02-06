@@ -25,4 +25,8 @@ ons.ready(function() {
         myApp.models.user.dailyReset();
     }
 
+    if (!window.localStorage.getItem('day')) {
+        window.localStorage.setItem('day', 0);
+    }
+
 });

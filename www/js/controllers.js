@@ -105,6 +105,7 @@ myApp.controllers = {
         }
 
         bindPromptToData('btn-prompt-point', 'point');
+        bindPromptToData('btn-prompt-day', 'day');
         myApp.views.settingsPage.render(page);
     },
 
