@@ -107,6 +107,7 @@ myApp.controllers = {
         bindPromptToData('btn-prompt-point', 'point');
         bindPromptToData('btn-prompt-day', 'day');
 
+
         page.querySelector('#btn-reset').onclick = function() {
             ons.notification.confirm({message: 'Really Reset?'})
             .then(function(value) {
@@ -117,6 +118,21 @@ myApp.controllers = {
                 }
                 myApp.views.settingsPage.render(page);
             });
+        };
+
+        page.querySelector('#btn-themes').onclick = function() {
+            if (myApp.models.get('theme') == "") {
+                myApp.models.set('theme', "-sunshine-theme");
+            } else if (myApp.models.get('theme') == "-sunshine-theme") {
+                myApp.models.set('theme', "-blue-theme");
+            } else if (myApp.models.get('theme') == "-blue-theme") {
+                myApp.models.set('theme', "-dark-theme");
+            } else if (myApp.models.get('theme') == "-dark-theme") {
+                myApp.models.set('theme', "-purple-theme");
+            } else {
+                myApp.models.set('theme', "");
+            }
+            document.getElementById('onsenui-theme').setAttribute("href", "node_modules/onsenui/css/onsen-css-components" + myApp.models.get('theme') + ".css");
         };
 
         myApp.views.settingsPage.render(page);
