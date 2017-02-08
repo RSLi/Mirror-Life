@@ -29,8 +29,4 @@ ons.ready(function() {
         window.localStorage.setItem('day', 0);
     }
 
-    if (!window.localStorage.getItem('theme')) {
-        window.localStorage.setItem('theme', '');
-    }
-
 });
