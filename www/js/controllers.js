@@ -122,13 +122,9 @@ myApp.controllers = {
 
         page.querySelector('#btn-themes').onclick = function() {
             if (myApp.models.get('theme') == "") {
-                myApp.models.set('theme', "-sunshine-theme");
-            } else if (myApp.models.get('theme') == "-sunshine-theme") {
-                myApp.models.set('theme', "-blue-theme");
-            } else if (myApp.models.get('theme') == "-blue-theme") {
                 myApp.models.set('theme', "-dark-theme");
             } else if (myApp.models.get('theme') == "-dark-theme") {
-                myApp.models.set('theme', "-purple-theme");
+                myApp.models.set('theme', ""); // Can add more themes here
             } else {
                 myApp.models.set('theme', "");
             }

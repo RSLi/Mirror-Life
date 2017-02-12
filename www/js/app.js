@@ -29,4 +29,7 @@ ons.ready(function() {
         window.localStorage.setItem('day', 0);
     }
 
+    //Initialization of Theme
+    document.getElementById('onsenui-theme').setAttribute("href", "node_modules/onsenui/css/onsen-css-components" + myApp.models.get('theme') + ".css");
+
 });
