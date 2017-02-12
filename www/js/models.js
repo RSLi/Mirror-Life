@@ -1,14 +1,18 @@
 myApp.models = {
     "initializeStorage": function() {
         var s = window.localStorage;
-        s.setItem('point',0);
-        s.setItem('today_point',0);
-        s.setItem('last_login', new Date().getDate());
-        s.setItem('multiplier',1);
-        s.setItem('theme', '');
-        s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
-        s.setItem('day', 0);
-        s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1"}, {"task": "Sample Task 2"}]}));
+        if (!window.localStorage.getItem('point')) {
+            s.setItem('point',0);
+            s.setItem('today_point',0);
+            s.setItem('last_login', new Date().getDate());
+            s.setItem('multiplier',1);
+            s.setItem('theme', '');
+            s.setItem('time_challenge', JSON.stringify({on:false}));//time challenge default to off
+            s.setItem('day', 0);
+            s.setItem('todolist', JSON.stringify({todolist:[{"task": "Sample Task 1"}, {"task": "Sample Task 2"}]}));
+            window.localStorage.setItem('day', 0);
+        }
+
     },
 
     "set": function(key, value) {
