@@ -7,10 +7,9 @@
 
 ### TODO
 - [x] Add hook and pull in the TimeChallengeScreen to refresh time display
+- [x] Customization of Theme color
 - [ ] Refactor model to enable module add-ons
-- [ ] Level Privilege Screen
-- [ ] Customization of Background Images
-- [ ] Customization of Theme color
+- [ ] Add privileges for level
 - [ ] Add Reward Store using Points
 - [ ] Home Screen Tap to Reveal UI
 - [ ] Splash Screen
