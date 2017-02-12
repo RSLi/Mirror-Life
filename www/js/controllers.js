@@ -120,6 +120,13 @@ myApp.controllers = {
             });
         };
 
+        page.querySelector('#btn-random').onclick = function() {
+            var min = 1;
+            var max = 10;
+            var random = Math.floor(Math.random() * (max - min + 1)) + min;
+            ons.notification.alert({message: random});
+        };
+
         page.querySelector('#btn-themes').onclick = function() {
             if (myApp.models.get('theme') == "") {
                 myApp.models.set('theme', "-dark-theme");
